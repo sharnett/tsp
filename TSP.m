@@ -1,4 +1,6 @@
 function [ solution,minE,D,P,greedyDistance] = TSP(  )
+% this is David Dralle's simulated annealing solution
+
 % function [ solution,minE,D,P,greedyDistance] = TSP(  )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
