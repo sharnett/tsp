@@ -34,7 +34,7 @@ class UndirectedGraph(object):
       if n == v:
         continue
       v_adjs[n] = v_adjs.get(n,0) + w
-    for n, w in v_adjs.iteritems():
+    for n, w in v_adjs.items():
       self.edges[(v,n)] = w
       self.edges[(n,v)] = w    
 
@@ -73,17 +73,17 @@ def minimum_cut(g, a):
 
 def testmincut():
   g = test0()
-  print minimum_cut(g, 1)
+  print(minimum_cut(g, 1))
   g = test1()
-  print minimum_cut(g, 1)
+  print(minimum_cut(g, 1))
   g = test2()
-  print minimum_cut(g, 1)
+  print(minimum_cut(g, 1))
   g = test3()
-  print minimum_cut(g, 1)
+  print(minimum_cut(g, 1))
 
 def test0():
   g = UndirectedGraph()
-  g.add_vertices(xrange(8))
+  g.add_vertices(range(8))
   g.add_edge(0,1,2)
   g.add_edge(0,4,3)
   g.add_edge(1,4,2)
@@ -100,7 +100,7 @@ def test0():
 
 def test1():
   g = UndirectedGraph()
-  g.add_vertices(xrange(5))
+  g.add_vertices(range(5))
   g.add_edge(0,1,1)
   g.add_edge(0,2,1)
   g.add_edge(0,3,1)
@@ -115,7 +115,7 @@ def test1():
 
 def test2():
   g = UndirectedGraph()
-  g.add_vertices(xrange(20))
+  g.add_vertices(range(20))
   g.add_edge(0,1,1)
   g.add_edge(0,2,1)
   g.add_edge(0,3,1)
@@ -310,7 +310,7 @@ def test2():
 
 def test3():
   g = UndirectedGraph()
-  g.add_vertices(xrange(50))
+  g.add_vertices(range(50))
   g.add_edge(0, 1, 1)
   g.add_edge(0, 2, 1)
   g.add_edge(0, 3, 1)

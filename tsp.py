@@ -1,5 +1,5 @@
 import numpy as np
-import gurobipy as grb
+#import gurobipy as grb
 import scipy.io 
 from itertools import product
 from mincut import minimum_cut, UndirectedGraph
@@ -43,7 +43,7 @@ def tsp(D):
     while mincutval < 2:
         m.optimize()
         if m.status != grb.GRB.status.OPTIMAL:
-            print 'bad status:', m.status
+            print('bad status:', m.status)
             return None
         candidate = [arc for arc,var in x.iteritems() if var.x > 0]
         g = UndirectedGraph()
@@ -53,7 +53,7 @@ def tsp(D):
         S, T, mincutval = minimum_cut(g, 0)
         m.addConstr(grb.quicksum(x[arc] for arc in cross(S,T)) >= 2, 'cut_%d'%it)
         it += 1
-        print it
+        print(it)
     return candidate, m.objVal
 
 def list2path(L):
